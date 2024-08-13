@@ -1,0 +1,29 @@
+<div class="mb-6">
+
+	<p class="bg-success">
+		<span class="product__id" style="display: none;">{{object.id}}</span>
+		<span class="product__model_name" style="display: none;">{{model_name}}</span>
+	</p>
+
+
+	<h1 class="product__title text-primary fw-bolder text-warnig fs-3 m-0 p=0">{{object.title | capfirst}}</h1>
+		{% include 'inventory/pg-contents/product-details-v2/sections/sku.html' %}
+	<hr class="text-warning">
+
+
+	<div class="py-3">
+		<p class="fs-sm text-reset">{{object.description | capfirst}}</p>
+	</div>
+
+	<div class="py-3">
+		<h5 class="">Pricing</h5>
+		<p class="d-flex mb-0">
+			<div class="fs-sm text-reset">List Price: Tk{{ object.listprice }}</div>
+		</p>
+		<p class="d-flex mb-0">
+			<div class="fs-sm">Current Offer: <span class="text-danger">Tk</span><span class="text-danger product__price">{{ object.saleprice }}</span></div>
+		</p>
+	</div>
+
+</div>		
+

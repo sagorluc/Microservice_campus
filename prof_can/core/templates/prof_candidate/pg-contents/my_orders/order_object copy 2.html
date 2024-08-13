@@ -1,0 +1,94 @@
+<!-- Order Posting information -->
+<div class="row">
+  <div class="col">
+    <p class="text-primary mb-3">
+        <h3><a class="text-underline fw-bold" href="{% url 'prof_candidate:order_details' object.tracking_id.0 %}">Tracking ID # {{ object.tracking_id.0 }}</a></h3>
+    </p>
+    <p class="text-muted mb-0">Order Date</p>
+    <p class="mb-0">{{ object.created.0|date:'m/d/Y h:i A' }} EST</p>
+    </p>
+  </div>
+  <div class="col-auto">
+    <a class="btn btn-outline-white" href="{% url 'prof_candidate:order_details' object.tracking_id.0 %}">Details</a>
+  </div>
+</div>
+
+<!-- Product Information -->
+<div class="row mb-3">
+  <div class="col">
+    <table>
+      <tbody>
+        <tr><p class="text-muted mb-0">Product Purchased</p></tr>
+        <tr>
+          <td>{{ object.sku.0 | upper }}</td>
+          <td>{{ object.title.0 | capfirst }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Order cancellation -->
+<div class="row mb-3">
+  <div class="col">
+    <table>cart_context>>>{{cart_context}}
+      <tbody>object>>{{object}}7777grace_left_in_seconds>>{{object.grace_left_in_seconds}}
+        <tr><p class="text-muted mb-0">Order Cancellation</p></tr>
+        <tr>object.processing_status.0{{object.processing_status.0}}
+            {% if object.processing_status.0 == 'cancelled' %}
+                <td><span class="text-danger">The order has been cancelled by the user. As a result, we have stopped processing this order.</span></td>
+            {% elif object.order_progress_status == 100 or object.processing_status.0 == 'delivered' %}
+                <td>The order cancellation is not possible anymore. If you have any concern about our product or overall service, you can <a href="{% url 'prof_candidate:file_disp_with_tracking_id' object.tracking_id.0 %}">file a dispute</a></td>
+            {% else %}
+                {% if object.processing_status.0 == 'pending' or object.processing_status.0 == 'processing' %}
+                  object.grace_left_in_seconds>>{{object.grace_left_in_seconds}}
+                    {% if object.grace_left_in_seconds.0 %}
+                        <td>You can cancel this order on or before {{ object.grace_period_ends.0 | date:'m/d/Y h:i A'  }} EST</td>
+                        <td><a class="" href="{% url 'prof_candidate:mmh_cancel_order' object.tracking_id %}">Cancel Order</a></td>
+                    {% else %}
+                        <td>kkk>>>Order cancellation time has expired</td>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Delivery Information -->
+<div class="row mb-3">
+  <div class="col">
+    <table>
+      <tbody>
+        <tr><p class="text-muted mb-0">Order Delivery Information</tr>
+        <tr>
+          {% if object.order_progress_status == 100 or object.processing_status == 'delivered' %}
+              <td><a class="" href="{% url 'prof_candidate:file_disp_with_order' object.tracking_id %}">File Dispute</a></td>
+          {% else %}
+              <td>Order has not delivered yet</td>
+          {% endif %}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Pricing Information -->
+<!-- <div class="row mb-3">
+  <div class="col">
+    <table>
+      <tbody>
+          <tr><p class="text-muted mb-0">Price Information</p></tr>
+          <tr>
+            <td>{{ object.final_price.0 }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+ -->
+
+{% comment "comment text" %}
+{% endcomment %}
+

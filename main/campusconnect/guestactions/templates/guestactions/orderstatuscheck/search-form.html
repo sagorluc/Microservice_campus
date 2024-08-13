@@ -1,0 +1,31 @@
+{% load crispy_forms_tags %}
+
+
+{% comment %} <form method="POST" id="myForm">
+  {% csrf_token %}
+  {% for form in form_order_search %}
+    <div class="row">
+      <div class="form-group col-md-8 mb-0">
+        {{ form|as_crispy_field }}
+      </div>
+    </div>
+  {% endfor %}
+  <button class="btn btn-secondary btn-xs rounded-0" type="submit">Submit</button>  
+</form>     {% endcomment %}
+
+
+<form method="POST" id="myForm">
+  {% csrf_token %}
+    <div class="row">
+      <div class="form-group col-md-8 mb-0">
+        {{ form_order_search.tracking_id|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-8 mb-0">
+        {{ form_order_search.email_add|as_crispy_field }}
+        <div id="emailAddError" class="text-danger"></div>
+      </div>
+    </div>
+  <button class="btn btn-secondary btn-xs rounded-0" type="submit">Submit</button>  
+</form>    

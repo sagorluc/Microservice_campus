@@ -1,0 +1,5 @@
+						<p>Order Delivery Information</p>
+						{% for deliverydate in instance.deliverydate_list %}
+							<p>Estimated Delivery Date</p>
+							<p>{{ deliverydate|date:'M d Y'}} EST</p>
+						{% endfor %}

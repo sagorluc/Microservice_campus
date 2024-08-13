@@ -1,0 +1,22 @@
+<div class="card card-bleed border-bottom border-bottom-md-0">
+  <div class="collapse d-md-block" id="sidenavCollapse">
+    <div class="card-body">
+      <h4 class="fw-bold text-primary">Purchase Confirmation</h4>
+      <ul class="card-list list text-reset">
+        <li class="">
+          {% if user.is_authenticated %}
+              {{ user.email }}
+          {% else %}
+              Information not available at this time. Please check again later.
+          {% endif %}
+        </li>
+      </ul>
+      <ul class="card-list list text-reset">
+        <li class="text-muted">
+              Our system detects that you have used the above email while making purchase.
+              And we have sent you a confirmation email to this address after successful purchase. 
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>

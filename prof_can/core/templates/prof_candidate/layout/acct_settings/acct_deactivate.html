@@ -1,0 +1,41 @@
+{% extends 'prof_candidate/layout/primary_layout.html' %}
+
+
+{% block ads %}
+  {% include 'prof_candidate/components/headers/mem-ben.html' %}
+{% endblock %}
+
+
+{% block sidebar_content %}
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/home-link.html' %}
+  </div>
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/acct_set.html' %}
+  </div>
+  <div class="mb-6">  
+    {% include 'prof_candidate/components/acct_settings/how_to_submit.html' %}
+  </div>  
+  <div class="mb-6">  
+    {% include 'prof_candidate/components/acct_settings/before_you_deactivate.html' %}
+  </div>
+  <div class="mb-6">  
+    {% include 'prof_candidate/components/acct_settings/after_you_deactivate.html' %}
+  </div>
+{% endblock %}
+
+
+{% block body_content_header %}
+  {{pg_headline}}
+{% endblock %}
+
+
+{% block body_content_section %}
+
+    <div class="row mb-6">
+      <div class="col-12 col-md-6">
+          {% include 'prof_candidate/pg-contents/acct_settings/acct_deactivate_form.html' %}
+      </div>
+    </div>
+
+{% endblock %}

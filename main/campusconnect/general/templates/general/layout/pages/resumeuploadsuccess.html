@@ -1,0 +1,32 @@
+{% extends 'general/layout/primary_layout.html' %}
+{% load static %}
+
+
+{% block meta %}
+  <title>Home | CampusLinker</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+{% endblock %}
+
+
+{% block content %}
+<div class="loader" ><img src="{% static 'general/assets/img/giphy224.gif' %}"></div>
+
+<section class="py-5 py-md-5 bg-gray-200">  
+  <div class="container-fluid">
+    <div class="row align-items-center px-5">
+
+      <div class="col-12 col-md-8 col-lg-7 order-md-1 py-1 py-md-1 py-lg-1">
+        {% comment %} {% include 'inventory/pg-contents/resume-upload-thankyou-block.html' %} {% endcomment %}
+        {% include 'inventory/shoppingcart/components/resume_upload.html' %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% include 'inventory/shoppingcart/pg-contents/how-to-track-order.html' %}
+{% endblock %}
+
+
+

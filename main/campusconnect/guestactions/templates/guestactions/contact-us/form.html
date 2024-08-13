@@ -1,0 +1,30 @@
+{% load crispy_forms_tags %}
+
+
+<form method="POST" id="myForm">
+  {% csrf_token %}
+  <div class="row">
+    <div class="form-group col-md-6 mb-0 text-white">
+      {{ form.f_name|as_crispy_field }}
+      <div id="firstNameError" class="text-danger"></div>
+    </div>
+    <div class="form-group col-md-6 mb-0 text-white">
+      {{ form.l_name|as_crispy_field }}
+      <div id="lastNameError" class="text-danger"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-12 mb-0 text-white">
+      {{ form.email|as_crispy_field }}
+      <div id="emailError" class="text-danger"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-12 mb-0 text-white">
+      {{ form.msg|as_crispy_field }}
+    </div>
+  </div>
+  <button class="btn btn-black text-white" type="submit">Submit</button>  
+</form>    

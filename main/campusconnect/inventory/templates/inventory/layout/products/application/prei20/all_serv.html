@@ -1,0 +1,68 @@
+{% extends 'inventory/layout/base_prod_list.html' %}
+
+{% block opening_header %}
+    <!-- ***** Main Banner Area Start ***** -->
+    <section class="section main-banner" id="top" data-section="section1">
+        <img src="https://campusstaticdata.s3.amazonaws.com/images/prod5.png" type="" />
+
+        <div class="video-overlay header-text">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="caption">
+                <h6>All Steps for</h6>
+                <h2>I-20 Application Made Easy</h2>
+                <p>One stop solution for your U.S. University Admission Application process 
+                from <span class="text-warning">I-20 Application Submission, I-20 Interview Preparation, Document Preparation, </span>,
+              and everything in between. Submit your I-20 application flawlessly with us</p>
+            </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Main Banner Area End ***** -->
+{% endblock %}
+
+{% block left_hand_side %}
+            <div class="categories">
+              <h4>University Recommendation System</h4>
+              <ul>
+                <li>Find your favorite campus quickly</li>
+                <li>Find your next campus without any 3rd party help</li>
+                <li>Avoid selecting a campus that is black listed by U.S. Embassy</li>
+                <li>Nam et condimentum</li>
+                <li>Phasellus nec sapien</li>
+              </ul>
+            </div>
+            <div class="categories">
+              <h4>App Packet Prep Help</h4>
+              <ul>
+                <li>Prepare your SOP letter confidently</li>
+                <li>Get your app packet reviewed by expert</li>
+                <li>Get your Sevis Fee paid hastle free</li>
+                <li>Get your WES verification easily</li>
+              </ul>
+            </div>            
+            <div class="categories">
+              <h4>Direct Communication Process</h4>
+              <ul>
+                <li>We can talk to your school on your behalf</li>
+                <li>We will help you unstack any process</li>
+                <li>Avoid selecting a campus that is black listed by U.S. Embassy</li>
+                <li>Nam et condimentum</li>
+                <li>Phasellus nec sapien</li>
+              </ul>
+            </div>            
+{% endblock %}
+
+
+{% block right_hand_side %}
+        <div class="row">
+          <div class="section-heading">
+            <h2>All Services for I-20 Application</h2>
+          </div>
+        </div>        
+
+      {% include 'inventory/pg-contents/service-list-all/prei20/service-list-long.html' %}
+{% endblock %}

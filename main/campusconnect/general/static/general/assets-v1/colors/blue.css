@@ -1,0 +1,144 @@
+a, a:hover {
+  color: #2fa9f6;
+  text-decoration: none;
+}
+#scrollUp {
+	background-color:#2fa9f6;
+}
+.section-title h2::after {
+	background-color:#2fa9f6;
+}
+.btn-common {
+	background-color:#2fa9f6;
+	border-color:#2fa9f6;
+}
+.btn-common:hover {
+    background-color: #2c94d6;
+	border-color:#2c94d6;
+}
+/*----------------------------------------*/
+/*  Submenu CSS
+/*----------------------------------------*/
+.mainmenu nav ul li a:hover {
+	color: #2fa9f6;
+}
+.mainmenu nav ul li .submenu li a:hover {
+	background-color:#2fa9f6;
+	color:#ffffff;
+}
+/*----------------------------------------*/
+/*  Mini Cart CSS
+/*----------------------------------------*/
+.mini-cart > ul > li > a:hover, .mini-cart > ul > li > a.minicart-icon.active {
+	background-color:#2fa9f6;
+	color:#ffffff;
+}
+.mini-cart-heading span {
+    color: #2fa9f6;
+}
+.mini-cart-heading h5 a:hover {
+	color: #2fa9f6;
+}
+.minicart-total span {
+	color: #2fa9f6;
+}
+.mini-cart-remove button:hover {
+	color: #2fa9f6;
+}
+.mini-cart-checkout a.view-cart:hover {
+	background-color:#2fa9f6;
+	border-color:#2fa9f6;
+}
+.mini-cart-checkout a.checkout {
+    background-color: #2fa9f6;
+	border-color:#2fa9f6;
+}
+.mini-cart-checkout a.checkout:hover {
+    background-color: #d58717;
+	border-color:#d58717;
+}
+/*----------------------------------------*/
+/*  Service CSS
+/*----------------------------------------*/
+.text-block h4 i {
+	color:#2fa9f6;
+}
+.service-single i {
+    background-color:#2fa9f6;
+}
+/*----------------------------------------*/
+/*  Course CSS
+/*----------------------------------------*/
+.course-nav-tabs ul li a:hover, .course-nav-tabs ul li a.active {
+	background-color:#2fa9f6;
+	color:#ffffff;
+}
+.course-price h5 {
+	color:#2fa9f6;
+}
+.course-text h3 a:hover {
+	color:#2fa9f6;
+}
+.slick-slider .slick-dots li.slick-active button {
+	background-color:#2fa9f6;
+}
+.course-meta a i {
+    color: #2fa9f6;
+}
+.slick-slider .slick-arrow:hover {
+    background-color:#2fa9f6;
+    color: #ffffff;
+}
+/*----------------------------------------*/
+/*  Blog & Event
+/*----------------------------------------*/
+.event-date span, .event-date small {
+    color: #2fa9f6;
+}
+.event-desc ul li i {
+    color: #2fa9f6;
+}
+.blog-desc h3 a:hover {
+	color:#2fa9f6;
+}
+.readmore:hover {
+	color:#2fa9f6;
+}
+/*----------------------------------------*/
+/*  CounterUp
+/*----------------------------------------*/
+.counter-single i {
+	color:#2fa9f6;
+}
+/*----------------------------------------*/
+/*  Register Area
+/*----------------------------------------*/
+.register-form-top {
+	background-color:#2fa9f6;
+}
+.regster-form button {
+	background-color:#2fa9f6;
+	color:#ffffff;
+}
+.regster-form button:hover {
+	background-color:#2c94d6;
+	border-color:#2c94d6;
+}
+/*----------------------------------------*/
+/*  Countdown
+/*----------------------------------------*/
+.course-countdown span.time-count {
+  color: #2fa9f6;
+}
+/*----------------------------------------*/
+/*  Footer
+/*----------------------------------------*/
+.recent-posts ul li h4 a:hover {
+	color:#2fa9f6;
+}
+.footer-menu ul li a:hover {
+	color:#2fa9f6;
+}
+.footer-bottom {
+    background-color: #2fa9f6;
+}

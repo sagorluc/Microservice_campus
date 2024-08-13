@@ -1,0 +1,49 @@
+{% extends 'prof_candidate/layout/primary_layout.html' %}
+
+
+{% block ads %}
+  {% include 'prof_candidate/components/headers/promo-offers.html' %}
+{% endblock %}
+
+
+{% block sidebar_content %}
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/home-link.html' %}
+  </div>
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/orders.html' %}
+  </div>
+  <div class="mb-6">
+    {% include 'prof_candidate/components/item-count-cancelled-order.html' %}
+  </div>  
+{% endblock %}
+
+
+{% block body_content_header %}
+  {{pg_headline}}
+{% endblock %}
+
+
+{% block body_content_section %}
+
+      {% if object_list %}
+        {% for object in object_list %}
+          <div class="mb-6">
+            {% include 'prof_candidate/pg-contents/order_cancellation/history.html' %}
+          </div>
+        {% endfor %}
+      {% else %}
+        You have no cancellation yet
+      {% endif %}
+
+      <div class="row mb-6">
+        <div class="card">
+          <p class="fs-sm text-muted">
+            Note: We are currently in the process of adding more information and features 
+          with this page. Please stay in touch.
+          </p>
+        </div>
+      </div>
+
+{% endblock %}
+

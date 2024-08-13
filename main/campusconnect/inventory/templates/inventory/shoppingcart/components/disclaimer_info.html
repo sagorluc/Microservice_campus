@@ -1,0 +1,13 @@
+{% if mmh_render_for_this_view_only %}
+	<div class="d-flex">
+	  	{% if products_list %}
+	  	<div class="py-3">
+			<p class="h6 small text-muted">
+By utilizing our shopping cart system, you acknowledge and agree to the following terms and conditions. The shopping cart system is designed to facilitate a smooth and secure transaction process for your convenience. While we make every effort to ensure the accuracy and functionality of the system, we cannot guarantee uninterrupted access or the absence of errors. We strive to provide accurate product information, but we recommend reviewing your order carefully before finalizing the purchase. Additionally, we are committed to safeguarding your personal information and maintaining the highest standards of security. However, we cannot be held responsible for any unforeseen circumstances, technical issues, or third-party interventions that may compromise the security of your data. Your use of the shopping cart system implies your understanding of these terms and your agreement to comply with our policies. If you have any concerns or encounter any issues while using the shopping cart, please contact our customer support for assistance.
+			</p>
+	  	</div>
+	  	{% endif %}
+	</div>
+{% else %}
+	<h1>Resume upload section not found</h1>
+{% endif %}

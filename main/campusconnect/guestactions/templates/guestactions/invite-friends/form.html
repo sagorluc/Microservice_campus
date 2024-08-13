@@ -1,0 +1,62 @@
+{% load crispy_forms_tags %}
+
+<form method="POST" id="myForm">
+  {% csrf_token %}
+  
+  <!-- Guest First Name -->
+  <div class="row">
+    <div class="form-group mb-0">
+      {{ form.guest_first_name|as_crispy_field }}
+      <div id="guestFirstNameError" class="text-danger"></div>
+    </div>
+  </div>
+
+<!-- Guest Last Name -->
+<div class="row">
+  <div class="form-group mb-0">
+    {{ form.guest_last_name|as_crispy_field }}
+    <div id="guestLastNameError" class="text-danger"></div>
+  </div>
+</div>
+
+<!-- Guest Email Address -->
+<div class="row">
+  <div class="form-group mb-0">
+    {{ form.guest_email_address|as_crispy_field }}
+    <div id="guestEmailAddressError" class="text-danger"></div>
+  </div>
+</div>
+
+  <!-- Friend First Name -->
+ <div class="row">
+    <div class="form-group mb-0">
+      {{ form.friend_first_name|as_crispy_field }}
+      <div id="friendFirstNameError" class="text-danger"></div>
+    </div>
+ </div>
+
+<!-- Friend Email Address -->
+<div class="row">
+  <div class="form-group mb-0">
+    {{ form.friend_email_address|as_crispy_field }}
+    <div id="friendEmailAddressError" class="text-danger"></div>
+  </div>
+</div>
+
+<!-- Consent -->
+<div class="row">
+  <div class="form-group mb-0">
+    {{ form.consent|as_crispy_field }}
+  </div>
+</div>
+
+  <button class="btn btn-primary btn-xs rounded-0" type="submit">Submit</button>
+</form>
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+<div class="list-group list-group-flush">
+
+
+    {% for object in object_list %}
+
+      <div class="list-group-item">
+        <div class="row">
+          <div class="col">
+            <p class="mb-0">
+                Message Date: {{ object.created_at }} EST
+            </p>
+              <small class="text-reset mb-0">
+                  Subject: {{ object.subject | capfirst }}
+              </small>
+              <p class="text-reset">
+                  {{ object.title | capfirst }}
+              </p>
+          </div>
+          <div class="col-auto">
+              <a class="btn btn-xs btn-outline-white" href="{% url 'prof_candidate:msg_details' object.id %}">
+                  Details
+              </a>
+          </div>
+        </div>
+      </div>
+
+    {% empty %}
+        <h3>You do not have any message yet</h3>
+    {% endfor %}
+
+
+</div>
+

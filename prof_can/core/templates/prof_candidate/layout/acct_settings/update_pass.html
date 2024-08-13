@@ -1,0 +1,36 @@
+{% extends 'prof_candidate/layout/primary_layout.html' %}
+
+
+{% block ads %}
+  {% comment %} {% include 'general/components/pgheaders/bandwidth.html' %} {% endcomment %}
+  {% include 'general/pg-contents/user-benifits/bandwidth.html' %}
+{% endblock %} 
+
+
+{% block sidebar_content %}
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/home-link.html' %}
+  </div>
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/acct_set.html' %}
+  </div>
+  <div class="mb-6">  
+    {% include 'prof_candidate/components/after_you_update.html' %}
+  </div>
+{% endblock %}
+
+
+{% block body_content_header %}
+  {{pg_headline}}
+{% endblock %}
+
+
+{% block body_content_section %}
+
+    <div class="row mb-6">
+      <div class="col-12 col-md-6">
+          {% include "prof_candidate/pg-contents/form.html" %}
+      </div>
+    </div>
+
+{% endblock %}

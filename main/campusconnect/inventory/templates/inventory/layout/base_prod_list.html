@@ -1,0 +1,28 @@
+{% extends 'general/layout/primary_layout.html' %}
+
+
+{% block meta %}
+  <title>{{prod_name|title}} | {{page_type|title}} | Campus Linker</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+{% endblock %}
+
+
+{% block body_contents %}
+
+    {% block opening_header %}{% endblock %}
+
+    <section class="upcoming-meetings" id="">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            {% block left_hand_side %}{% endblock %}
+          </div>
+          <div class="col-lg-8">
+            {% block right_hand_side %}{% endblock %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

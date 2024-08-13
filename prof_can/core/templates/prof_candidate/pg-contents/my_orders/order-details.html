@@ -1,0 +1,170 @@
+<div class="mb-6">
+  <table class="table table-sm text-reset">
+    <thead><p class="fw-bold mb-0">Order Placement Info</p></thead>
+    <tbody>
+      <tr>
+        <td><span class="text-muted">Order Tracking ID</span></td>
+        <td>{{mcart_instance.tracking_id}}</td>
+      </tr>
+      <tr>
+        <td><span class="text-muted">Purcashe Date</span></td>
+        <td>{{mcart_instance.mcompleted_purchase.created|date:'m/d/Y h:i A'}} EST</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- ---------------------------- -->
+<!-- Purchased Items -->
+<!-- ---------------------------- -->
+<div class="mb-6">
+  <table class="">
+    <thead><p class="fw-bold mb-0">Purchased Item(s)</p></thead>
+    <tbody>
+      <tr>
+        <td><span class="text-muted">Service Line</span></td>
+        <td>{{mcart_instance.get_user_visible_product_line}}</td>
+      </tr>
+      <tr>
+        <td><span class="text-muted">Primary Service</span></td>
+        <td>
+          <table>
+            <tr><td>{{mcart_instance.sku | upper}}</td></tr>
+            <tr><td>{{mcart_instance.title | capfirst}}</td></tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="text-muted">Service Option(s)</span></td>
+        <td>
+          <table>
+            <tr>
+              <td>
+                {% if mcart_serviceoptions %}
+                  {% for serviceoption in mcart_serviceoptions %}
+                    <p class="mb-0">{{serviceoption.sku | upper}}</p>
+                    <p class="mb-0">{{serviceoption.name | capfirst}}</p>
+                  {% empty %}
+                    <p>No service option purchased</p>
+                  {% endfor %}
+                {% else %}
+                    <p>No service option purchased</p>
+                {% endif %}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="text-muted">Delivery Option(s)</span></td>
+        <td>
+          <table>
+                {% if mcart_deliveryoption %}
+                    <tr><td>{{mcart_deliveryoption.0.name}}</td></tr>
+                {% else %}
+                    <tr><td>No delivery preference purchased</td></tr>
+                {% endif %}
+          </table>
+        </td>
+      </tr>      
+      <tr>
+        <td><span class="text-muted">Resume Attached</span></td>
+        <td>
+          <table>
+            <tr>
+              <td><a href="{{resume_uploaded.url}}">Download</a></td>
+            </tr>
+          </table>
+        </td>
+      </tr>            
+    </tbody>
+  </table>
+</div>
+
+<!-- ---------------------------- -->
+<!-- Order Status -->
+<!-- ---------------------------- -->
+<div class="mb-6">
+  <p class="mb-0 border-bottom text-primary mb-3">Order Processing Status</p>
+  <table class="">
+    {% if mcart_instance.processing_status == 'cancelled' %}
+          <tr>
+            <td><span class="text-danger">Order has been cancelled</span></td>
+          </tr>
+    {% elif mcart_instance.processing_status == 'delivered' %}
+          <tr>
+            <td><span class="">Completed: 100%</span></td>
+          </tr>
+    {% else %}
+
+            {% if order_status == 5 %}
+                <tr><td>Processing</td></tr>
+            {% elif order_status == 25 %}
+                <tr><td>Evaluated initially</td></tr>
+            {% elif order_status == 50 %}
+                <tr><td>Reviewed</td></tr>
+            {% elif order_status == 75 %}
+                <tr><td>Fully Reviewed</td></tr>
+            {% elif order_status == 100 %}
+                <tr><td>Completed: 100%</td></tr>
+            {% endif %}
+
+    {% endif %}
+  </table>
+</div>
+
+<!-- ---------------------------- -->
+<!-- Order Cancellation -->
+<!-- ---------------------------- -->
+<div class="mb-6">
+  <p class="mb-0 border-bottom text-primary mb-3">Order Cancellation Status</p>
+  <table class="">
+      {% if mcart_instance.processing_status == 'cancelled' %}
+            <tr>
+              <td colspan="1"><span class="text-muted">Current Status</span></td>
+              <td colspan="2">Order has been cancelled successfully</td>
+            </tr>
+            <tr>
+              <td colspan="1"><span class="text-muted">Refund Status</span></td>
+              <td colspan="2">Your refund should be in progress. Please allow us 7-15 business days to process your request.</td>
+            </tr>
+      {% elif mcart_instance.processing_status == 'delivered' %}
+            <tr><td>You cannot cancel the order anymore because it's already been delivered</td></tr>
+      {% elif order_status >= 5 and order_status <= 100 %}
+              <tr>
+                <td>Cancellation is available until</td>
+                <td>{{ mcart_instance.grace_period_ends|date:'m/d/Y h:i A' }} EST</td>
+              </tr>
+              <tr>
+                <td>Submit request</td>
+                <td><a href="{% url 'prof_candidate:mmh_cancel_order' mcart_instance.tracking_id %}">Click Here</a></td>
+              </tr>
+      {% else %}
+            <tr><td>Time to Cancel This Order Has Expired</td></tr>
+      {% endif %}
+  </table>
+</div>
+
+
+<!-- ---------------------------- -->
+<!-- Delivery info -->
+<!-- ---------------------------- -->
+<div class="mb-6">
+  <p class="mb-0 border-bottom text-primary mb-3">Order Delivery Status</p>
+  <table class="">
+      {% if mcart_instance.processing_status == 'cancelled' %}
+              <tr>
+                <td colspan="2"><span class="text-muted">Delivery status</span></td>
+                <td>Order will not be delivered anymore</td>
+              </tr>
+      {% else %}  
+            {% if mcart_instance.processing_status == 'delivered' %}
+              <tr><td>Order has been <span class="bg-success text-white p-1" disabled>delivered</span></td></tr>
+              <tr><td><a class="" href="{% url 'prof_candidate:file_disp_with_tracking_id' mcart_instance %}">File Dispute</a></td></tr>
+              <tr><td><a class="" href="{% url 'prof_candidate:submit_order_feedback' mcart_instance %}">Submit Order Feedback</a></td></tr>
+            {% else %}
+              <tr><td>Order delivery is in progress</td></tr>
+            {% endif %}
+
+      {% endif %}
+  </table>
+</div>

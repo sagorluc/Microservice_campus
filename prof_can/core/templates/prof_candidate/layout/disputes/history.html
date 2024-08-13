@@ -1,0 +1,34 @@
+{% extends 'prof_candidate/layout/primary_layout.html' %}
+
+
+{% block ads %}
+  {% include 'prof_candidate/components/headers/mem-ben.html' %}
+{% endblock %}
+
+
+{% block sidebar_content %}
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/home-link.html' %}
+  </div>
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/disputes.html' %}
+  </div>
+  <div class="mb-6">  
+    {% include 'prof_candidate/components/dispute/how_it_works.html' %}
+  </div>
+  <div class="mb-6">  
+    {% include 'prof_candidate/components/dispute/refund_policy.html' %}
+  </div>
+  <div class="mb-6">
+    {% include 'prof_candidate/components/dispute/disclaimer.html' %}
+  </div>
+{% endblock %}
+
+{% block body_content_header %}
+  {{pg_headline}}
+{% endblock %}
+
+
+{% block body_content_section %}
+      {% include 'prof_candidate/pg-contents/disputes/history.html' %}
+{% endblock %}

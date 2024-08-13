@@ -1,0 +1,98 @@
+{% if messages %}
+  {% for message in messages %}
+    {{ message }}
+  {% endfor %}
+{% endif %}
+
+
+<div class="row">
+  <div class="col">
+    <p class="text-primary fw-bolder">
+      <a class="" href="{% url 'prof_candidate:order_details' object.tracking_id %}">Tracking ID # {{ object.tracking_id }}</a>
+    </p>
+  </div>
+</div>
+
+<div class="card bg-light">
+  <div class="card-body">
+    <table>
+      <tr><td>Date & Time</td><td>{{ object.created|date:'m/d/Y h:i A' }} EST</td></tr>
+      <tr><td>Product(s) Purchased</td>
+        <td>
+          <ul>
+            <li>{{ object.sku | upper}}</li>
+            <li>{{ object.title | title}}</li>
+            <li>{{ mcart_serviceoptions}}</li>
+          </ul>        
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<ul>
+  <li type="square">Order Processing Status
+    {% if object.processing_status == 'cancelled' %}
+    <ul><li>Order processing is on hold</li></ul>
+    {% elif object.processing_status == "processing" %}
+    <ul><li>5%</li></ul>
+    {% elif object.processing_status == "drafted" %}
+    <ul><li>25%</li></ul>
+    {% elif object.processing_status == "reviewed" %}
+    <ul><li>50%</li></ul>
+    {% elif object.processing_status == "delivery_queue" %}
+    <ul><li>75%</li></ul>
+    {% elif object.processing_status == "delivered" %}
+    <ul><li>100%</li></ul>
+    {% else %}
+    <ul><li>{{ object.processing_status | title }}</li></ul>    
+    {% endif %}
+  </li>
+  <li type="square">Estimated Order Delivery Deadline
+    <ul><li>{{ object.delivery_time_ends|date:'m/d/Y' }} 11:59 PM EST</li></ul>
+  </li>   
+  <li type="square">Order Cancellation
+    <ul>
+          {% if object.processing_status == 'pending' or object.processing_status == 'processing' %}
+            {% if object.grace_left_in_seconds %}
+              <li class="text-reset">You can cancel this order until {{ object.grace_period_ends|date:'m/d/Y h:i A' }} EST</li>
+              <li><a class="" href="{% url 'prof_candidate:mmh_cancel_order' object.tracking_id %}">Cancel Order</a></li>
+            {% else %}
+              <li class="text-reset">Order cancellation time has expired</li>
+            {% endif %}
+        
+          {% elif object.processing_status == 'cancelled' %}
+            <li class="text-danger">Order has been cancelled</li>
+            <li class="text-reset">Order cancellation request placed by user</li>
+            <li class="text-reset"><a href="{% url 'prof_candidate:mmh_cancel_order_details' object.tracking_id %}">Show cancellation details</a></li>
+            <li class="text-reset"><a href="">See my refund status</a></li>
+          
+          {% else %}
+            <li class="text-reset">You cannot cancel this order because it has already been delivered</li>
+          {% endif %}
+    </ul>
+  </li>
+   
+  <li type="square">Post Delivery Options
+    <ul>
+        {% if object.processing_status == 'delivered' %}
+        <li>
+          <a class="" href="{% url 'prof_candidate:file_disp_with_tracking_id' object.tracking_id %}">File Dispute</a>
+        </li>
+        <li>
+          <a class="" href="{% url 'prof_candidate:submit_order_feedback' object.tracking_id %}">Give Service Feedback</a>
+        </li>
+        {% elif object.processing_status == 'cancelled' %}
+          <li>Options are not available anymore</li>
+        {% elif object.processing_status == 'pending' or object.processing_status == 'processing' %}  
+          <li>Options are not available yet</li>
+        {% endif %}
+      </li>
+    </ul>
+  </li>
+
+</ul>
+
+{{cart_context}}
+{% comment "comment text" %}
+{% endcomment %}

@@ -1,0 +1,149 @@
+{% extends 'general/layout/primary_layout.html' %}
+{% load static %}
+
+{% block meta %}
+  <title>Home | Campus Connect</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+{% endblock %}
+
+
+{% block body_contents %}
+
+    <!--banner-area-->
+    <div class="banner-area bg-1 pt-70 pb-430">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1">
+            <div class="banner-inner text-center">
+                {% include 'general/pg-contents/homepg_form.html' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    
+    <!--TOP 3 FEATURES-->
+    <div class="textblock-area">
+      <div class="container textblock-inner mt-minus-80">
+        <div class="row">
+          <div class="col-lg-4 col-sm-12">
+            <div class="text-block">
+              <h4><i class="ion-ios-play"></i> Review My I-20 Checklist</h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-12 mt-sm-20">
+            <div class="text-block">
+              <h4><i class="ion-md-planet"></i> Run My Financial Assessment</h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-12 mt-sm-20">
+            <div class="text-block">
+              <h4><i class="ion-md-book"></i> Evaluate My Profile</h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+
+    <!--First Time in Bangladesh-->
+    <div class="courses-area pt-100 pb-50 fix">
+      <div class="container-fluid">
+          {% include 'general/pg-contents/first-time-in-bd.html' %}
+      </div>
+    </div>
+
+    
+
+    <!-- FEATURES -->
+    <div class="pt-50 pb-50">
+      <div class="container">
+
+        <div class="row">
+            <div class="text-center">
+                <h2 class="featurette-heading">Finding campus has never been so seamless</h2>
+            </div>
+        </div>
+
+        <div class="row featurette mt-80">
+            {% include 'general/pg-contents/feature-1.html' %}
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            {% include 'general/pg-contents/feature-2.html' %}
+        </div>
+      </div>
+    </div>
+    
+
+    <!--ads/campus insights-->
+    {% include 'general/components/ads/1-campus-insights.html' %}
+
+
+
+    <div class="pt-50 pb-50">
+      <div class="container">
+
+          <div class="row">
+            <div class="text-center">
+              <h2 class="featurette-heading">Prepare for your U.S. visa interview with confidence</h2>
+              <p>A crew of experienced educators helm our vast and growing library. Harness their expertise, and get the same <br/> award-winning learning materials that are used by teachers in millions of classrooms.</p>
+            </div>
+
+        </div>
+
+
+        <div class="row featurette mt-80">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Prepare your documents <span class="text-muted">accurately</span></h2>
+            <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+            <ul>
+              <li>Get help for DS-160 fillup</li>
+              <li>Get help for documnts organization for the interview</li>
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h3 class="featurette-heading">Take mock visa interview <span class="text-muted">that suits your schedule</span></h3>
+            <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+            <ul>
+              <li>Get help for DS-160 fillup</li>
+              <li>Get help for documnts organization for the interview</li>
+            </ul>            
+          </div>
+          <div class="col-md-5 order-md-1">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--CTA-->
+    <div class="subscribe-area overlay mt-80">
+      <div class="container">
+        {% include 'general/pg-contents/cta.html' %}
+      </div>
+    </div>
+
+
+{% endblock %}

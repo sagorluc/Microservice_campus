@@ -1,0 +1,142 @@
+{% extends 'general/layout/primary_layout.html' %}
+{% load static %}
+
+{% block meta %}
+  <title>Home | Campus Linker</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+{% endblock %}
+
+
+{% block body_contents %}
+    <!-- ***** Main Banner Area Start ***** -->
+    <section class="section main-banner" id="top" data-section="section1">
+        <img src="https://campusstaticdata.s3.amazonaws.com/images/prod5.png" type="" />
+
+        <div class="video-overlay header-text">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="caption">
+                <h6>Get Prepared for</h6>
+                <h2>I-20 Application</h2>
+                <p>One stop solution for your U.S. University Admission Application process 
+                from <span class="text-warning">I-20 Application Submission, I-20 Interview Preparation, Document Preparation, </span>,
+              and everything in between. Submit your I-20 application flawlessly with us</p>
+                <div class="main-button-red">
+                    <div class=""><a href="{% url 'prei20_services_all' %}">Find All Solutions</a></div>
+                </div>
+            </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <section class="upcoming-meetings" id="">
+      <div class="container">    
+        <div class="row">
+          <div class="section-heading">
+            <h2>Prepare For Interview Flawlessly</h2>
+          </div>
+        </div>                
+        <div class="row">
+            <div class="row">          
+              <div class="col-lg-4">
+                <div class="categories">
+                  <h4>Why Our Services</h4>
+                  <ul>
+                    <li>[+] Our services are personalized for your unique needs</li>
+                    <li>[+] We work with you 1-1 Basis</li>
+                    <li>[+] We offer money back guarantee</li>
+                    <li>[+] We work 24x7x365 for you</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="row">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+                <div class="row align-items-center">
+                  <div class="col-lg-6">
+                    <div class="meeting-item">
+                      <div class="thumb">
+                        <a href="https://www.campuslinker.com/service/prei20/service-details/1" disabled><img src="https://campusstaticdata.s3.amazonaws.com/images/prod1615.png" alt=""></a>
+                      </div>
+                      <div class="down-content">
+                        <a href="https://www.campuslinker.com/service/prei20/service-details/1"><h4>Find a list of universities based on my profile</h4></a>
+                        <p class="text-muted">Prepare and organize your documents in the most accurate way possible before the interview</p>
+                        <p>BDT 300 <span class="text-danger">BDT 125</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="meeting-item">
+                      <div class="thumb">
+                        <a href="https://www.campuslinker.com/service/prei20/service-details/5" disabled><img src="https://campusstaticdata.s3.amazonaws.com/images/prod1177.png" alt=""></a>
+                      </div>
+                      <div class="down-content">
+                        <a href="https://www.campuslinker.com/service/prei20/service-details/5"><h4>Help me submit my online application for I-20</h4></a>
+                        <p class="text-muted">This will help you identify where are your lackings for your interview preparation</p>
+                        <p>BDT 300 <span class="text-danger">BDT 100</span></p>
+                      </div>
+                    </div>
+                  </div>                    
+                </div>
+    </div>
+    <div class="carousel-item">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="meeting-item">
+                      <div class="thumb">
+                        <a href="https://www.campuslinker.com/service/prei20/service-details/3" disabled><img src="https://campusstaticdata.s3.amazonaws.com/images/prod1363.png" alt=""></a>
+                      </div>
+                      <div class="down-content">
+                        <a href="https://www.campuslinker.com/service/prei20/service-details/3"><h4>Help me complete my Degree verification</h4></a>
+                        <p class="text-muted">Take mock interview with a very similar situation that you will face in your actual interview</p>
+                        <p>BDT 180 <span class="text-danger">BDT 110</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="meeting-item">
+                      <div class="thumb">
+                        <a href="https://www.campuslinker.com/service/prei20/service-details/4" disabled><img src="https://campusstaticdata.s3.amazonaws.com/images/prod1990.png" alt=""></a>
+                      </div>
+                      <div class="down-content">
+                        <a href="https://www.campuslinker.com/service/prei20/service-details/4"><h4>Need help for a direct collaboration with my prospective university</h4></a>
+                        <p class="text-muted">Give me a list of question I may face in my interview</p>
+                        <p>BDT 300 <span class="text-danger">BDT 125</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon bg-danger text-white" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon bg-danger text-white" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+                </div>
+
+            
+                </div>
+                <div class="row">
+                  <div class="section-heading">
+                    <div class="main-button-red"><a href="{% url 'prei20_services_all' %}">All Services</a></div>
+                  </div>
+                </div>                
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

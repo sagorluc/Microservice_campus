@@ -1,0 +1,8 @@
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{form | crispy}}
+    <button class="btn btn-black" type="submit">Submit</button>
+</form>

@@ -1,0 +1,50 @@
+{% extends 'prof_candidate/layout/primary_layout.html' %}
+
+
+{% block ads %}
+  {% include 'inventory/components/pg-contents/get-started/dialogue.html' %}
+{% endblock %}
+
+
+{% block sidebar_content %}
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/home-link.html' %}
+  </div>
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/orders.html' %}
+  </div>
+  <div class="mb-6">
+    {% include 'prof_candidate/components/item-count.html' %}
+  </div>
+  <div class="mb-6">
+    {% include 'prof_candidate/components/cancellation-policy-rules.html' %}
+  </div>
+{% endblock %}
+
+
+{% block body_content_header %}
+  {{section_header_1}}
+{% endblock %}
+
+
+{% block body_content_section %}
+
+      {% if object_list %}
+        {% for object in object_list %}
+          <div class="mb-6">
+            {% include 'prof_candidate/pg-contents/my_orders/order_object.html' %}
+          </div>
+        {% endfor %}
+      {% else %}
+        You have no orders yet
+      {% endif %}
+
+<p>cart_instances_result_ownerid>>>{{cart_instances_result_ownerid}}</p>
+<p>cart_instances_result_owneremail>>{{cart_instances_result_owneremail}}</p>
+
+
+{% endblock %}
+
+
+{% comment "Optional note" %}
+{% endcomment %}

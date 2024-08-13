@@ -1,0 +1,13 @@
+{% extends 'mymailroom/base_fancy.html' %}
+
+{% block meta %}
+<title>CampusLinker Service Feedback</title>
+{% endblock %}
+
+{% block msg_body %} 
+    {% include 'mymailroom/components/prof_candidate/service_feedback.html' %}
+{% endblock %}
+
+{% block coupon_code_info %}
+    {% include 'mymailroom/components/coupon_code-2.html' %}
+{% endblock %}

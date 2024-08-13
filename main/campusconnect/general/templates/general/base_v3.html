@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>CampusLinker</title>
+  
+    <!-- CSS FILES  -->
+    <link rel="stylesheet" href="{% static 'general/assets/vendor/bootstrap/css/bootstrap.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'general/assets/css/fontawesome.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'general/assets/css/templatemo-edu-meeting.css' %}" type="text/css" />    
+    <link rel="stylesheet" href="{% static 'general/assets/css/owl.css' %}" type="text/css" />        
+    <link rel="stylesheet" href="{% static 'general/assets/css/lightbox.css' %}" type="text/css" />        
+
+    {% block meta %}
+    {% endblock %}
+
+  {% endblock head %}
+</head>
+
+<body>
+
+    <!-- Sub Header -->
+    <div class="sub-header">
+      <div class="container">
+        {% include 'general/components/menus/header/main-menu-5.html' %}
+      </div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="{% url 'site_homepage_link' %}" class="logo">CampusLinker</a>
+
+                        <!-- ***** Menu End ***** -->
+                        {% include 'general/components/menus/header/main-menu-6.html' %}
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% block body_contents %}
+    {% endblock %}
+
+    <section class="contact-us" id="">
+      <div class="footer">
+        <div class="container">
+          <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-3">
+            <div class="col-3 col-md-3 mb-3">
+              <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                CampusLinker
+              </a>
+              <p class="text-body-secondary">© 2024</p>
+            </div>
+
+            <div class="col-3 col-md-3 mb-3">
+              <h6 class="text-white py-3">External Resources</h6>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="https://bd.usembassy.gov/" target="_blank">U.S. Embassy Bangladesh</a></li>
+                <li class="nav-item mb-2"><a href="https://travel.state.gov/content/travel/en/us-visas/study.html" target="_blank">F1 Visa Info Page</a></li>
+                <li class="nav-item mb-2"><a href="https://travel.state.gov/content/travel/en/us-visas.html" target="_blank">Visa Basic Info Page</a></li>
+              </ul>
+            </div>
+
+            <div class="col-3 col-md-3 mb-3">
+              <h6 class="text-white py-3">Internal Links</h6>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="https://www.campuslinker.com/service/prei20/all-services" class="nav-link p-0 text-body-secondary">All I-20 Services</a></li>
+                <li class="nav-item mb-2"><a href="https://www.campuslinker.com/service/usvisa/all-services" class="nav-link p-0 text-body-secondary">All U.S. Visa Services</a></li>
+              </ul>
+            </div>
+
+            <div class="col-3 col-md-3 mb-3">
+              <h6 class="text-white py-3">Help & Support</h6>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="{% url 'guestactions:contact_us_guest' %}" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
+              </ul>
+            </div>
+          </footer>
+          <div class="">
+            <p class="text-white">Designed and built with passion by <a href="https://www.legoio.com/" target="_blank">www.legoio.com</a> from U.S. & LegoIO BD from Bangladesh
+              <a href="{% url 'mydocumentations:terms_of_use' %}" class="p-0">Terms & Condition</a>
+              <a href="{% url 'mydocumentations:privacy_policy' %}" class="p-0">Privacy Policy</a>
+              <a href="{% url 'mydocumentations:payment_policy' %}" class="p-0">Pyment Policy</a>
+              <a href="{% url 'mydocumentations:security_policy' %}" class="p-0">Security Policy</a>
+              <a href="{% url 'mydocumentations:cancel_policy' %}" class="p-0">Cancellation & Refund Policy</a>
+            </p>
+            <p class="text-white">
+              Bangladesh Address: House-41, Block-C, Badaldi Main Road, Baunia, Turag, Uttara, Dhaka-1230
+            </p>
+          </div>              
+        </div>        
+      </div>
+    </section>
+    
+    <!-- vendor -->
+    <script src="{% static 'general/assets/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'general/assets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'general/assets/js/isotope.min.js' %}"></script>    
+    <script src="{% static 'general/assets/js/owl-carousel.js' %}"></script>    
+    <script src="{% static 'general/assets/js/lightbox.js' %}"></script>    
+    <script src="{% static 'general/assets/js/tabs.js' %}"></script>    
+    <script src="{% static 'general/assets/js/video.js' %}"></script>    
+    <script src="{% static 'general/assets/js/slick-slider.js' %}"></script>    
+    <script src="{% static 'general/assets/js/custom.js' %}"></script>      
+
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+
+   <!-- custom -->
+   <script src="{% static 'general/assets/js/custom/shopcartmow1.js' %}"></script>
+   <script src="{% static 'general/assets/js/custom/custom.js' %}" type="module"></script>
+   <script src="{% static 'general/assets/js/custom/form_validation.js' %}"></script>
+   <script src="{% static 'mmhauth/assets/js/custom.js' %}"></script>
+
+
+  {% block mmh_javascript %}
+  {% endblock mmh_javascript %}
+
+  <!--Bootstrap JS CDN link-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
+
+
+{% comment "Optional note" %}
+{% endcomment %}

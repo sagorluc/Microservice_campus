@@ -1,0 +1,70 @@
+{% extends 'inventory/layout/base_prod_ins_pages.html' %}
+
+
+{% block body_contents %}
+
+<div class="container-fluid bg-gray-200">
+  <div class="container">
+
+    <div class="py-6 py-md-6">
+        <div class="row">
+
+          <div class="col-md-6">
+            <p>Selected Product</p>
+            <p>{{product_line|capfirst}}</p>
+            <div id="base_product_for_prod_comp" hidden>{{product_line}}</div>
+          </div>
+
+          <div class="col-md-6">
+            <p>Select a product from the list</p>
+            <div>
+              <form method="POST" action="">
+                {% csrf_token %}
+                <select name="prod_other_code" class="form-control form-control-sm" id="id_prod_other_code">
+                  {% for elm in prod_list_others %}
+                    <option value="{{elm}}">{{elm|title}}</option>
+                  {% endfor %}
+                </select>
+              </form>
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+    <div class="py-8 py-md-6">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+              <div id="prod_fixed_section">
+              {% include 'general/pg-contents/product-comparison/adhoc.html' %}
+              {% include 'general/pg-contents/product-comparison/bandwidth.html' %}
+              {% include 'general/pg-contents/product-comparison/dialect.html' %}
+              {% include 'general/pg-contents/product-comparison/dialogue.html' %}
+              {% include 'general/pg-contents/product-comparison/exp180.html' %}
+              {% include 'general/pg-contents/product-comparison/identity.html' %}
+              {% include 'general/pg-contents/product-comparison/staircase.html' %}
+              {% include 'general/pg-contents/product-comparison/strategy.html' %}
+              </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div id="prod_var_section">
+              {% include 'general/pg-contents/product-comparison/adhoc.html' %}
+              {% include 'general/pg-contents/product-comparison/bandwidth.html' %}
+              {% include 'general/pg-contents/product-comparison/dialect.html' %}
+              {% include 'general/pg-contents/product-comparison/dialogue.html' %}
+              {% include 'general/pg-contents/product-comparison/exp180.html' %}
+              {% include 'general/pg-contents/product-comparison/identity.html' %}
+              {% include 'general/pg-contents/product-comparison/staircase.html' %}
+              {% include 'general/pg-contents/product-comparison/strategy.html' %}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

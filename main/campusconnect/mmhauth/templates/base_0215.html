@@ -1,0 +1,53 @@
+{% extends "general/base_v3.html" %}
+{% load static %}
+
+{% block meta %}
+  <title>CampusLinker</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+{% endblock %}
+
+
+{% block body_contents %}
+
+  <div class="container-fliud border-bottom shadow-sm">
+    <div class="container">
+      {% include 'mmhauth/components/menus/main-menu-2.html' %}
+    </div>
+  </div>
+
+  <section class="bg-light">
+    <div class="container d-flex flex-column">
+      <div class="row py-11">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+  </section>
+
+  <div class="container-fluid bg-light">
+    <div class="container">
+      <div class="col-12 col-md-6">
+        <div class="row py-5">
+          {% include 'mmhauth/components/disclaimer_info.html' %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% block security_info %}
+    {% include 'mmhauth/components/security-info.html' %}
+  {% endblock %}
+
+  {% block footnote_links %}
+
+  {% endblock %}
+
+
+  {% comment %} {% block mmh_javascript %}
+    <script src="{% static 'mmhauth/assets/js/custom.js' %}" type="module"></script>
+  {% endblock mmh_javascript %} {% endcomment %}
+
+
+
+{% endblock %}

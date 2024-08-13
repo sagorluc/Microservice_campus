@@ -1,0 +1,43 @@
+{% extends 'prof_candidate/layout/primary_layout.html' %}
+
+
+{% block ads %}
+  {% include 'prof_candidate/components/headers/promo-offers.html' %}
+{% endblock %}
+
+
+{% block sidebar_content %}
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/home-link.html' %}
+  </div>
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/orders.html' %}
+  </div>
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/disputes.html' %}
+  </div>  
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/cancel-history.html' %}
+  </div>    
+{% endblock %}
+
+
+{% block body_content_section %}
+
+  <div class="card-header">
+    <div class="row align-items-center">
+      <div class="col">
+        <h4 class="mb-0">{{section_header_1}}</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        {% include 'prof_candidate/pg-contents/order_cancellation/details.html' %}
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}

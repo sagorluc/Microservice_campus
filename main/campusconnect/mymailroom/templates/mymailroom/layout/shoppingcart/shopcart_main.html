@@ -1,0 +1,16 @@
+{% extends 'mymailroom/base_fancy.html' %}
+
+{% block msg_intro %}     
+    {% include 'mymailroom/components/shopping_cart/msg-intro-3.html' %}
+{% endblock %}
+
+{% block msg_body %}
+	{% include 'mymailroom/components/shopping_cart/msg_body.html' %}
+	{% include 'mymailroom/components/shopping_cart/item-list-1.html' %}
+	{% include 'mymailroom/components/shopping_cart/transaction-details.html' %}
+	{% include 'mymailroom/components/shopping_cart/delivery-details.html' %}
+{% endblock %}
+
+{% block coupon_code_info %}
+    {% include 'mymailroom/components/coupon_code-2.html' %}
+{% endblock %}

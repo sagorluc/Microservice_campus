@@ -1,0 +1,48 @@
+
+<div class="list-group list-group-flush mb-6">
+  <div class="list-group-item">
+    <div class="row">
+      <div class="col">
+        <h3 class="mb-0">Dispute Details</h3>
+        <table class="table table-sm text-reset">
+          <tbody>
+            <tr>
+              <td>Dispute ID</td>
+              <td>{{ object.submission_id }}</td>
+            </tr>
+            <tr>
+              <td>Dispute Filed</td>
+              <td>{{ object.created_at|date:'m/d/Y h:i A' }} EST</td>
+            </tr>
+            <tr>
+              <td>Tracking ID</td>
+              <td>{{ object.created_aganist }}</td>
+            </tr>
+            <tr>
+              <td>Your Message</td>
+              <td>{{ object.message | capfirst }}</td>
+            </tr>            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div class="list-group list-group-flush mb-6">
+  <div class="list-group-item">
+    <div class="row">
+      <div class="col">
+        <h3 class="mb-0">Dispute Resolution Center</h3>
+        <table class="table table-sm text-reset">
+          <tbody>
+            <tr>
+              <td>Dispute Decision</td>
+              <td>No decision has been made yet</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

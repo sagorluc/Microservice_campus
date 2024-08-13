@@ -1,0 +1,24 @@
+{% if object_list %}
+<div class="list-group list-group-flush">
+    {% for object in object_list %}
+      <div class="list-group-item">
+        <div class="row">
+          <div class="col">
+            <p class="">
+              Submission Id: {{ object.submission_id }}
+            </p>
+            <p class="">
+              Submitted at: {{ object.created_at|date:'m/d/Y h:i A' }} EST
+            </p>
+            <p class="">
+              Order Tracking Id: {{ object.created_aganist.tracking_id }}
+            </p>
+          </div>
+          <div class="col-auto">
+            <a class="btn btn-outline-white" href="{% url 'prof_candidate:dispute_details' object.id %}">Details</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% endif %}

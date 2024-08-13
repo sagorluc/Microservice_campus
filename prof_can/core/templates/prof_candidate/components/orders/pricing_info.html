@@ -1,0 +1,27 @@
+<div class="card card-bleed border-bottom border-bottom-md-0 mb-6">
+  <div class="collapse d-md-block" id="sidenavCollapse">
+    <div class="card-body">
+      <h4 class="fw-bold text-primary">Pricing Information</h4>
+      <ul class="card-list list text-reset mb-6">
+        <li class="list-item">Product Total</li>
+        <li class="list-item">
+              {% if mcart_instance.final_price == mcart_instance.base_price %}
+                {{mcart_instance.final_price}}
+              {% else %}
+                (coupon {{mcart_instance.mcart_coupons.mcoupon_given.random_string_32}} applied: {{mcart_instance.base_price}} - {{mcart_instance.coupon_subtract}})
+                {{mcart_instance.final_price}}
+              {% endif %}
+        </li>
+        <li class="list-item">Service Option(s) Total</li>
+        <li class="list-item">Tk{{mcart_serviceoption_total}}</li>
+        <li class="list-item">Delivery Fee Total</li>
+        <li class="list-item">Tk{{mcart_delivery_total}}</li>
+        <li class="list-item">Sales Tax</li>
+        <li class="list-item">Tk{{mcart_instance.tax_price}}</li>
+        <li class="list-item">Grand Total</li>
+        <li class="list-item">Tk{{mcart_item_totalcost}}</li>
+      </ul>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+{% extends 'prof_candidate/layout/primary_layout.html' %}
+
+
+{% block ads %}
+  {% include 'inventory/components/pg-contents/get-started/exp180.html' %}
+{% endblock %}
+
+
+{% block sidebar_content %}
+  <div class="mb-6">
+    {% include 'prof_candidate/components/menu/home-link.html' %}
+  </div>
+  <div class="mb-6">
+  	{% include 'prof_candidate/components/menu/disputes.html' %}
+  </div>
+  <div class="mb-6">  
+    {% include 'prof_candidate/components/menu/orders.html' %}
+  </div>
+{% endblock %}
+
+{% block body_content_header %}
+  {{pg_headline}}
+{% endblock %}
+
+{% block body_content_section %}
+
+      <div class="row mb-6">
+          <p><h5 class="mb-0">Order Tracking ID: {{ tracking_id }} </h5></p>
+      </div>
+
+      <div class="row mb-6">
+          {% include 'prof_candidate/pg-contents/form.html' %}
+      </div>
+
+{% endblock %}

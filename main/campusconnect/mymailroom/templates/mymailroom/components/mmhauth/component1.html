@@ -1,0 +1,25 @@
+{% autoescape off %}
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+        <td class="text-services" style="text-align: left; padding-left:25px;">
+          <div class="heading-section">
+            <p>      
+              Thank you for your interest in CampusLinker. 
+            In order to complete your Signup
+            process, please click on the following button
+            </p>
+            <p><a class="btn btn-primary" href={{protocol}}://{{dns_name}}{% url 'mmhauth:mmh_auth_verification_completed_link' activation_code %}>Activate Now</a></p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-services" style="text-align: left; padding-left:25px;">
+          <div class="heading-section">
+            <p>      In the event that the aforementioned button does not function as expected, kindly utilize the following link to activate your account
+            </p>
+            <p><a href={{protocol}}://{{dns_name}}{% url 'mmhauth:mmh_auth_verification_completed_link' activation_code %}>{{protocol}}://{{dns_name}}{% url 'mmhauth:mmh_auth_verification_completed_link' activation_code %}</a></p>
+          </div>
+        </td>
+      </tr>
+    </table>
+{% endautoescape %}
