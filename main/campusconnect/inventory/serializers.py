@@ -4,13 +4,13 @@ from inventory.models.mcart import mcart
 
 class BuyerInfoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = BuyerInfoModel
+        model  = BuyerInfoModel
         fields = '__all__'
         
         
         
 class McartSerializer(serializers.ModelSerializer):
     class Meta:
-        model = mcart
+        model  = mcart
         fields = '__all__'
         

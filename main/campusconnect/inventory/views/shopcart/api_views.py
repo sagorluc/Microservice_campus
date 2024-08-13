@@ -30,6 +30,8 @@ class McartViewSet(viewsets.ModelViewSet):
         if purchase_ids:
             return self.queryset.filter(mcompleted_purchase__purchase_id__in=purchase_ids)
         return self.queryset
+    
+    
 
 # class BuyerInfoViewset(ViewSet):
 #     queryset = BuyerInfoModel.objects.all()
